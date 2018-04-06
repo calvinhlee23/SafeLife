@@ -1,14 +1,23 @@
 var path = require("path");
-
+var webpack = require('webpack')
+var HtmlWebpackPlugin = require('html-webpack-plugin')
+var ExtractTextPlugin = require('extract-text-webpack-plugin')
+var CopyWebpackPlugin = require('copy-webpack-plugin')
+var CleanWebpackPlugin = require('clean-webpack-plugin')
 module.exports = {
   context: __dirname,
-  entry: "./client/index.dev.js",
+  entry: [
+    'whatwg-fetch',
+    'react-hot-loader/patch',
+    'webpack-hot-middleware/client?path=http://localhost:3000/__webpack_hmr',
+    './client/index.dev.js',
+  ],
   output: {
-    path: path.join(__dirname, 'client', 'assets', 'js'),
-    filename: "bundle.js",
+    path: path.join(__dirname, 'dist'),
+    filename: '[name].js',
+    publicPath: '/static/',
     devtoolModuleFilenameTemplate: '[resourcePath]',
     devtoolFallbackModuleFilenameTemplate: '[resourcePath]?[hash]',
-    publicPath: '/static/',
   },
   module: {
     rules: [
@@ -26,5 +35,19 @@ module.exports = {
   resolve: {
     extensions: [".js", ".jsx" ]
   },
-  mode: "development"
+  plugins: [
+    new webpack.LoaderOptionsPlugin({debug: true}),
+    new CleanWebpackPlugin(['dist'], { root: __dirname }),
+    new ExtractTextPlugin('[name].min.css'),
+    new CopyWebpackPlugin([{ from: 'client/assets' }]),
+    new HtmlWebpackPlugin({
+      template: 'client/index.html',
+      filename: 'index.html',
+      inject: 'body' }),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoEmitOnErrorsPlugin(),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+    }),
+  ],
 };

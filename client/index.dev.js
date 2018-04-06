@@ -13,19 +13,19 @@ const store = configureStore()
 ReactDOM.render(
     <AppContainer>
         <Provider store={store}>
-            <RootApp className="startofapp" />
+            <RootApp/>
         </Provider>
     </AppContainer>
   , document.getElementById('SafeLifeRootApp')
 );
 
 if (module.hot) {
-    module.hot.accept('./App', () => {
+    module.hot.accept('./root_app', () => {
         const NextApp = require('./root_app').default;
         ReactDOM.render(
             <AppContainer>
                 <Provider store={store}>
-                    <NextApp className="startofapp" />
+                    <NextApp/>
                 </Provider>
             </AppContainer>,
             document.getElementById('SafeLifeRootApp')

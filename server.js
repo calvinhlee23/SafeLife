@@ -30,7 +30,7 @@ if (env !== 'production') {
 
     server_base.use(middleware);
     server_base.get('*', function response(req, res) {
-        res.write(middleware.fileSystem.readFileSync(path.join(__dirname, 'client', 'assets', 'js',)));
+        res.write(middleware.fileSystem.readFileSync(path.join(__dirname, 'dist/index.html')));
         res.end();
     });
 
@@ -49,7 +49,7 @@ if (env !== 'production') {
     console.log('++++++++++++++++++++++ PRODUCTION +++++++++++++++++++++++');
     server_base.use('/static', express.static(__dirname + '/dist'));
     server_base.get('*', function response(req, res) {
-        res.sendFile(path.join(__dirname, 'client', 'assets', 'js',));
+        res.sendFile(path.join(__dirname, 'dist/index.html'));
     });
 }
 server_base.listen(port, '0.0.0.0', function onStart(err) {
