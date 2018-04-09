@@ -8,10 +8,11 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     height: "100%",
     width: "100%",
-    fontFamily: "Helvetica"
+    fontFamily: "Helvetica",
   },
   AppBody: {
     display: "flex",
+    height: "100%",
   },
 });
 

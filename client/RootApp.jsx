@@ -20,10 +20,9 @@ class RootApp extends Component {
         return (
             <Router className={css(styles.Router)} id="SafeLifeRootAppRouter">
               <div className={css(styles.RouterWrap)}>
-                {/* Header & Sidebar Route placed outside of switch to be rendered all the time*/}
+                {/* Header Route placed outside of switch to be rendered all the time*/}
                 <Route component={Header}/>
                 <div className={css(styles.AppBody)}>
-                  <Route component={Sidebar}/>
                   <Switch>
                     <Route path="/" component={Home}/>
                   </Switch>

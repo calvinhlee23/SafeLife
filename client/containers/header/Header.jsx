@@ -12,11 +12,13 @@ export default class Header extends Component {
     return (
       <div className={css(styles.Header)}>
         <div className={css(styles.LogoWrap)}>
-          <h1>Safe Life</h1>
+          <h1>SafeLife</h1>
         </div>
         <div className={css(styles.SearchWrap)}>
+          <input/>
         </div>
         <div className={css(styles.ToolsWrap)}>
+          <div>tools</div>
         </div>
       </div>
     )
