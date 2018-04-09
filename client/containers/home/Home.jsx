@@ -17,13 +17,14 @@ export default class Home extends Component {
 
   render() {
     var props = this.props;
+    var currentPath = props.match.path;
     return (
       <div className={css(styles.Home)}>
         <Sidebar {...props}/>
-        <Route path={`${props.match.path + "mail"}`} component={SafeMailDashboard}/>
-        <Route path={`${props.match.path + "notary"}`} component={SafeNotaryDashboard}/>
-        <Route path={`${props.match.path + "volt"}`} component={SafeVoltDashboard}/>
-        <Route path={`${props.match.path + "pass"}`} component={SafePassDashboard}/>
+        <Route path={currentPath + "mail"} component={SafeMailDashboard}/>
+        <Route path={currentPath + "notary"} component={SafeNotaryDashboard}/>
+        <Route path={currentPath + "volt"} component={SafeVoltDashboard}/>
+        <Route path={currentPath + "pass"} component={SafePassDashboard}/>
       </div>
     );
   }

@@ -8,7 +8,7 @@ export default class SafeVoltDashboard extends SuperDashboard {
 
   render() {
     return (
-      <div>SafeVoltDash TBH</div>
+      <div>SafeVoltDash TBD</div>
     )
   }
 }

@@ -8,7 +8,7 @@ export default class SafeMailDashboard extends SuperDashboard {
 
   render() {
     return (
-      <div>SafeMailDash TBH</div>
+      <div>SafeMailDash TBD</div>
     )
   }
 }

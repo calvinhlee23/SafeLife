@@ -8,7 +8,7 @@ export default class SafePassDashboard extends SuperDashboard {
 
   render() {
     return (
-      <div>SafePassDash TBH</div>
+      <div>SafePassDash TBD</div>
     )
   }
 }
