@@ -3,6 +3,8 @@ import React, {Component} from 'react';
 import {css} from 'aphrodite';
 import styles from './NewButton_Styles.js';
 
+import NewButtonOptions from './NewButtonOptions.jsx';
+
 export default class NewButton extends Component {
   constructor(props) {
     super(props);
@@ -18,6 +20,9 @@ export default class NewButton extends Component {
       >
         <span className={css(styles.NewLabel)}>New</span>
         <span className={css(styles.ArrowDown)}/>
+        {this.state.open
+          && <NewButtonOptions/>
+        }
       </div>
     );
   }
