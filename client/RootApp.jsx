@@ -7,8 +7,9 @@ import {css} from 'aphrodite';
 
 import styles from './RootApp_Styles.js';
 
-import Home from './containers/home/Home.jsx';
+import Header from './containers/header/Header.jsx';
 import Sidebar from './containers/sidebar/Sidebar.jsx';
+import Home from './containers/home/Home.jsx';
 
 class RootApp extends Component {
     constructor(props) {
@@ -19,11 +20,14 @@ class RootApp extends Component {
         return (
             <Router className={css(styles.Router)} id="SafeLifeRootAppRouter">
               <div className={css(styles.RouterWrap)}>
-                {/*Sidebar Route placed outside of switch to be rendered all the time*/}
-                <Route component={Sidebar}/>
-                <Switch>
-                  <Route path="/" component={Home}/>
-                </Switch>
+                {/* Header & Sidebar Route placed outside of switch to be rendered all the time*/}
+                <Route component={Header}/>
+                <div className={css(styles.AppBody)}>
+                  <Route component={Sidebar}/>
+                  <Switch>
+                    <Route path="/" component={Home}/>
+                  </Switch>
+                </div>
               </div>
             </Router>
         );

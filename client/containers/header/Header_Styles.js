@@ -1,17 +1,20 @@
 import {StyleSheet} from 'aphrodite';
 
 const styles = StyleSheet.create({
-  Router: {
-  },
-  RouterWrap: {
+  Header: {
     display: "flex",
-    flexDirection: "column",
-    height: "100%",
     width: "100%",
-    fontFamily: "Helvetica"
+    height: "40px",
+    background: "#7F7F7F",
   },
-  AppBody: {
-    display: "flex",
+  LogoWrap: {
+    height: "100%",
+  },
+  SearchWrap: {
+
+  },
+  ToolsWrap: {
+
   },
 });
 
