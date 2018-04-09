@@ -21,23 +21,25 @@ export default class Sidebar extends Component {
                       },
     ];
   }
-  createPath = () => {
 
+  createPathButtons = () => {
+    return (
+      this.pathAttr.map((el, i) => {
+        return (
+          <HomePathButton {...el}
+                          key={`HomePathButton-${i}`}
+                          history={this.props.history}
+          />
+        );
+      })
+    );
   }
-  // createPathButtons = () => {
-  //   return (
-  //     this.pathAttr.map((el, i) => {
-  //       return (
-  //         <HomePathButton key={`HomePathButton-${i}}`/>
-  //       );
-  //     });
-  //   );
-  // }
 
   render() {
-    // var homePathButtons = this.createPathButtons();
+    var homePathButtons = this.createPathButtons();
     return(
       <div className={css(styles.Sidebar)}>
+        {homePathButtons}
       </div>
     )
   }

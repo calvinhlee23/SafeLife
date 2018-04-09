@@ -6,6 +6,7 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     width: "135px",
     background: "#EEEEEE",
+    paddingTop: "20px",
   }
 });
 
