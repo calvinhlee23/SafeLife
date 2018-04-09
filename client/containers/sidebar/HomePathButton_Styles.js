@@ -7,7 +7,6 @@ const styles = StyleSheet.create({
     fontSize: "13px",
     lineHeight: "16px",
     cursor: "pointer",
-    paddingLeft: "20px",
   },
 });
 

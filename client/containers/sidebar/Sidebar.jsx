@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
-import {css} from 'aphrodite';
 
+import {css} from 'aphrodite';
 import styles from './Sidebar_Styles.js';
 
+import NewButton from "./NewButton.jsx";
 import HomePathButton from './HomePathButton.jsx';
 
 export default class Sidebar extends Component {
@@ -39,6 +40,7 @@ export default class Sidebar extends Component {
     var homePathButtons = this.createPathButtons();
     return(
       <div className={css(styles.Sidebar)}>
+        <NewButton/>
         {homePathButtons}
       </div>
     )
