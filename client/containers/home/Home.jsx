@@ -25,6 +25,7 @@ export default class Home extends Component {
         <Route path={currentPath + "notary"} component={SafeNotaryDashboard}/>
         <Route path={currentPath + "volt"} component={SafeVoltDashboard}/>
         <Route path={currentPath + "pass"} component={SafePassDashboard}/>
+        <h1> <br/>Welcome to SafeLife</h1>
       </div>
     );
   }

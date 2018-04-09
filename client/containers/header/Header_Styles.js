@@ -9,6 +9,12 @@ const styles = StyleSheet.create({
     height: "40px",
     background: "#7F7F7F",
     padding: "0 20px",
+    "-webkit-touch-callout": "none", /* iOS Safari */
+    "-webkit-user-select": "none", /* Safari */
+    "-khtml-user-select": "none", /* Konqueror HTML */
+    "-moz-user-select": "none", /* Firefox */
+    "-ms-user-select": "none", /* Internet Explorer/Edge */
+    "user-select": "none", /* Non-prefixed version, currently*/
   },
   LogoWrap: {
     fontSize: "16px",
@@ -16,6 +22,7 @@ const styles = StyleSheet.create({
     lineHeight: "19px",
     color: "#fff",
     width: "5%",
+    cursor: "pointer",
   },
   SearchWrap: {
     width: "75%",

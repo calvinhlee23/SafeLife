@@ -11,7 +11,9 @@ export default class Header extends Component {
   render() {
     return (
       <div className={css(styles.Header)}>
-        <div className={css(styles.LogoWrap)}>
+        <div className={css(styles.LogoWrap)}
+             onClick={()=>{this.props.history.push("/")}}
+        >
           <h1>SafeLife</h1>
         </div>
         <div className={css(styles.SearchWrap)}>
