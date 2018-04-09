@@ -1,4 +1,4 @@
-/* eslint no-console: 0 */
+// @ Calvin Lee
 
 const express = require('express');
 const path = require('path');

@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import { browserHistory } from 'react-router';
 import configureStore from './stores/configure-store-dev';
 import { AppContainer } from 'react-hot-loader';
-import RootApp from './root_app.jsx';
+import RootApp from './RootApp.jsx';
 
 const store = configureStore()
 // const history = syncHistoryWithStore(browserHistory, store)
@@ -20,8 +20,8 @@ ReactDOM.render(
 );
 
 if (module.hot) {
-    module.hot.accept('./root_app', () => {
-        const NextApp = require('./root_app').default;
+    module.hot.accept('./RootApp', () => {
+        const NextApp = require('./RootApp').default;
         ReactDOM.render(
             <AppContainer>
                 <Provider store={store}>
